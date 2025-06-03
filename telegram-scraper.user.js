@@ -6,6 +6,7 @@
 // @description  Scrapes messages from Telegram channels and sends them to an n8n webhook. Features a GM_config GUI for settings.
 // @description:ru Собирает сообщения из Telegram-каналов и отправляет их на веб-хук n8n. Имеет графический интерфейс настроек через GM_config.
 // @author       Igor Lebedev (Adapted by Gemini Pro)
+// @license      MIT
 // @match        https://web.telegram.org/k/*
 // @match        https://web.telegram.org/a/*
 // @match        https://web.telegram.org/z/*
