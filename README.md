@@ -22,7 +22,7 @@ A UserScript to scrape messages from specified Telegram channels (when viewed in
     *   Or any other UserScript manager that supports `@require` and `@grant` directives.
 
 2.  **Install the Script**:
-    *   **Click here to install**: [https://raw.githubusercontent.com/ВАШ_НИКНЕЙМ_GITHUB/ИМЯ_ВАШЕГО_РЕПОЗИТОРИЯ/main/telegram-scraper.user.js](https://raw.githubusercontent.com/ВАШ_НИКНЕЙМ_GITHUB/ИМЯ_ВАШЕГО_РЕПОЗИТОРИЯ/main/telegram-scraper.user.js)
+    *   **Click here to install**: [https://github.com/LebedevIV/telegram-web-scraper/raw/refs/heads/main/telegram-scraper.user.js](https://github.com/LebedevIV/telegram-web-scraper/raw/refs/heads/main/telegram-scraper.user.js)
     *   (Replace `ВАШ_НИКНЕЙМ_GITHUB` and `ИМЯ_ВАШЕГО_РЕПОЗИТОРИЯ` with your actual GitHub username and repository name. Also, ensure `main` is your default branch name; it might be `master` for older repositories.)
     *   Alternatively, navigate to the `telegram-scraper.user.js` file in this repository, click the "Raw" button, and your UserScript manager should prompt you to install it.
 
