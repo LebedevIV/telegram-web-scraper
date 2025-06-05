@@ -69,3 +69,42 @@ Scraping progress and logs are output to the browser's developer console (F12).
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Simulating Human-like Behavior (Adjusting Speed)
+
+The script includes various timing parameters that can be adjusted to make its operation slower and appear more like human interaction. This can be useful to avoid potential rate-limiting or detection by Telegram, although the primary goal is data collection.
+
+You can adjust these settings via the script's configuration GUI ("Настройки скрипта... / Script Settings..."):
+
+### Key Parameters to Adjust for Slower, More Human-like Scraping:
+
+1.  **Main Operation Pauses:**
+    *   **`Base scrape interval (ms)`**: (Default: `30000`) This is the main pause between processing chunks of messages when scrolling up a channel. Increasing this (e.g., to `60000` - `120000` ms) significantly slows down how quickly the script moves to older messages.
+    *   **`Pause after scroll (ms)`**: (Default: `5000`) Pause after each scroll action (up or down). Increasing this (e.g., to `7000` - `15000` ms) simulates a user "reading" messages after scrolling.
+
+2.  **Navigation and Activation Pauses (for Multi-Channel Mode):**
+    *   **`Pause after navigation (ms)`**: (Default: `2500`) Pause after changing the URL hash to switch channels. Increase to `3000` - `5000` ms if channels load slowly.
+    *   **`Pause between channel activation attempts (ms)`**: (Default: `700`) Pause between checks if the target channel has become active. Can be slightly increased if needed (e.g., `1000` - `1500` ms).
+
+3.  **"Scroll to Bottom" Pauses:**
+    *   **`Pause after "scroll to bottom" button click (ms)`**: (Default: `2500`) Pause after clicking the "down" arrow button (with unread count). Increase to `3000` - `5000` ms.
+    *   **`Pause during programmatic scroll down (ms)`**: (Default: `700`) Pause between iterations of programmatic scrolling to the very bottom. Increase to `1000` - `2000` ms.
+
+4.  **Action and Sending Delays:**
+    *   **`Short pause before/after scroll action (ms)`**: (Default: `300`) A brief pause before processing messages or scrolling up. Increase to `500` - `1000` ms for a slight "hesitation."
+    *   **`Delay before sending each message to n8n (ms)`**: (Default: `1000`) Pause between sending individual messages to your n8n webhook. Increasing this (e.g., `1500` - `3000` ms) reduces the request frequency to your n8n instance.
+
+5.  **Randomness Factors:**
+    *   **`Randomness factor for major pauses (0.0-1.0)`**: (Default: `0.3`) Adds variability to longer pauses. A value of `0.3` means +/- 15% of the base pause. Increasing slightly (e.g., to `0.4` - `0.5`) can make pauses less predictable.
+    *   **`Randomness factor for minor pauses (0.0-1.0)`**: (Default: `0.15`) Adds variability to shorter pauses. Can be slightly increased (e.g., to `0.2` - `0.25`).
+
+6.  **Randomize Channel Order:**
+    *   **`Randomize channel order for multi-scrape`**: (Default: `true`) When enabled, the script will shuffle the list of target channels before starting a "Scrape All Listed Channels" task. This makes the scraping pattern less predictable if you run it frequently.
+
+**Example "Slower" Configuration:**
+*   `Base scrape interval (ms)`: `90000` (1.5 minutes)
+*   `Pause after scroll (ms)`: `10000` (10 seconds)
+*   `Delay before sending each message to n8n (ms)`: `2500` (2.5 seconds)
+*   `Randomness factor for major pauses`: `0.4`
+
+Experiment with these values to find a balance that suits your needs and makes the script's activity appear more natural. Remember that significantly increasing all pauses will make the overall scraping process much longer.
