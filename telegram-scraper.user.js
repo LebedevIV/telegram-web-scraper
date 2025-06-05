@@ -80,7 +80,8 @@
     }
     consoleLog(`v${GM_info.script.version} Script execution started.`);
 
-    const GM_CONFIG_ID = `TeleScraperConfig_v${GM_info.script.version.replace(/\./g, '_')}`;
+    const GM_CONFIG_ID = `TeleScraperConfig_v${GM_info.script.version.replace(/\./g, '_')}`; // на время разработки настройки сбрасываются от версии к версии до дефолтных
+    // const GM_CONFIG_ID = 'TeleScraperUserSettings'; // Любое уникальное статическое имя // При достижении стабильных версий настройки можно будет сохранять
 
     let configFields = {
         'N8N_WEBHOOK_URL': {
