@@ -1,6 +1,7 @@
-# telegram-web-scraper
-UserScript to scrape Telegram channel messages and send to n8n or other system
 # Telegram Web Scraper UserScript
+
+**[Русская версия README (Russian README)](README.ru.md)** 
+*(For English, please continue reading below.)*
 
 A UserScript to scrape messages from specified Telegram channels (when viewed in web.telegram.org) and send them to a configured n8n webhook.
 
